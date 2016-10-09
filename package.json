@@ -1,0 +1,20 @@
+{
+  "name": "backstage",
+  "version": "0.0.1",
+  "description": "Aplcación empresarial multiplataforma para gestionar eventos audiovisuales.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alberto D.Sosa",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "mongoose": "^4.6.3"
+  }
+}
