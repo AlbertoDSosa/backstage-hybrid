@@ -2,19 +2,21 @@
 var	express = require('express')
 var app = express()
 var mongoose = require('mongoose')
-var api = require('./api')
+var api = require('./server/api')
 var bodyParser = require('body-parser')
 var cors = require('cors')
 
+// Variables de entorno y globales
 var env = process.env.NODE_ENV || 'production'
 
+// Conexión base de datos
 if(env === 'development'){
-	mongoose.connect('mongodb://localhost/backstage-test')
+	mongoose.connect('mongodb://172.17.0.1/backstage-dev')
 } else {
-	mongoose.connect('mongodb://localhost/backstage')
+	mongoose.connect('mongodb://172.17.0.1/backstage')
 }
 
-//middlewares
+// Middlewares
 app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))

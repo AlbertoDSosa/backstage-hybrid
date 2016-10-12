@@ -1,6 +1,7 @@
 
 
 var query = function (req, res, query, Resource) {
+
   if (query === 'find' ) {
 
     var feature = req.params.feature

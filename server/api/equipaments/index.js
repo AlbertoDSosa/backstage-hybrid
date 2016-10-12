@@ -1,21 +1,7 @@
-var mongoose = require('mongoose')
+
 var express = require('express')
-var db = require('helpers/query')
-
-var EquipamentSchema = mongoose.Schema({
-	id: { type: String, required: true, unique: true },
-	//manual: { type: String }
-	name: { type: String, required: true },
-	feature: { type: String, required: true },
-  quantity: { type: Number, required: true },
-  brand: { type: String },
-	model: { type: String },
-	description: { type: String }
-	//photo: { type: String }
-
-}, { collection: 'equipaments'})
-
-var Equipament = mongoose.model('Equipament', EquipamentSchema)
+var db = require('libs/queries')
+var Equipament = require('libs/models').equipament
 
 var router = express.Router()
 
@@ -49,7 +35,4 @@ router.delete('/equipament/:id?', function (req, res) {
 
 })
 
-module.exports = {
-  router: router,
-  model: Equipament
-}
+module.exports = router

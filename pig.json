@@ -1,0 +1,8 @@
+{
+    "backstage_db":{
+        "name": "backstage-db",
+        "image":"mongo",
+        "ports": ["27017:27017"],
+        "daemon":true
+    }
+}

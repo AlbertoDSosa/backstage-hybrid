@@ -1,12 +1,14 @@
 var express = require('express')
 
-var apiRouter = express.Router()
+//var users = require('./users')
+var equipaments = require('./equipaments')
+var shows = require('./shows')
 
-//var users = require('./users').router
-var equipaments = require('./equipaments').router
-var shows = require('./shows').router
-//apiRouter.use('/', users)
-apiRouter.use('/', equipaments)
-apiRouter.use('/', shows)
+// Express Router
+var apiRouters = express.Router()
 
-module.exports = apiRouter
+apiRouter.use('/', users)
+apiRouters.use('/', equipaments)
+apiRouters.use('/', shows)
+
+module.exports = apiRouters
