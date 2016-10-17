@@ -1,5 +1,6 @@
 var mongoose = require('mongoose')
 var models = require('../../libs/models')
+var Query = require('../../libs/queries')
 
 // Variables de entorno y globales
 var env = process.env.NODE_ENV || 'production'
@@ -12,11 +13,15 @@ if(env === 'development'){
 }
 
 var Person = models.person
-var persona = new Person({
-	name: 'Alberto'
+
+var person = new Query(Person)
+
+
+var query = person.readOne({ id: 1 })
+
+query.then(function () {
+	console.log(person)
 })
 
-persona.save(function (err, res) {
-	if (err) console.log(err)
-	document.write(res.name)
-})
+
+
