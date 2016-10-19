@@ -7,8 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "desktop-dev": "gulp desktop-dev && nw desktop/build",
-    "server-db": "pig start backstage_db",
+    "desktop-dev": "NODE_ENV=development gulp desktop-dev && nw desktop/build",
+    "database-dev": "pig start backstage_db",
     "server-dev": "",
     "server-prod": "NODE_PATH=. node server/server.js"
   },
@@ -18,8 +18,8 @@
     "body-parser": "^1.15.2",
     "cors": "^2.8.1",
     "express": "^4.14.0",
-    "mongoose": "^4.6.3",
-    "nw": "^0.17.6-sdk"
+    "mongoose": "^4.6.4",
+    "nw": "^0.18.0-sdk"
   },
   "devDependencies": {
     "docker-pig": "^0.5.0",

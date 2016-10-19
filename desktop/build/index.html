@@ -4,8 +4,20 @@
     <title></title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <p>We are using node.js: </p>
+    <form id="add" name="addForm">
+      <input id="add_name" type="text" name="name">
+      <input id="add_id" type="text" name="id">
+      <input type="submit" value="Save">
+    </form>
+    <form id="delete" name="deleteForm">
+      <input id="delete_id" type="text" name="id">
+      <input type="submit" value="Delete">
+    </form>
+    <form id="find" name="findForm">
+      <input id="find_name" type="text" name="name">
+      <input type="submit" value="Find">
+    </form>
+    <div class="out"></div>
     <script src="index.js"></script>
   </body>
 </html>
