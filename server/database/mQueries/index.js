@@ -1,5 +1,5 @@
 
-var promise = require('mpromise')
+const promise = require('mpromise')
 
 function Query(resource) {
   var self = this
@@ -7,7 +7,7 @@ function Query(resource) {
   this.queryResponse = function (err, res) {
     if(err) {
       self.response = err
-    } else  {
+    } else {
       self.response = res
     }
   }
@@ -16,13 +16,15 @@ function Query(resource) {
     if(err){
       self.result = err
     } else {
-      self.result = [doc, result]
+      self.result = result
     }
   }
 }
 
 
 // CRUD
+
+// Copy
 
 Query.prototype.writeOne = function (doc) {
 
@@ -35,34 +37,39 @@ Query.prototype.writeOne = function (doc) {
 }
 
 Query.prototype.writeMany = function(docs) {
-  promise = resource.insertMany(docs, this.queryResponse)
+  promise = this.resource.insertMany(docs, this.queryResponse)
 
   return promise
 }
 
-Query.prototype.readAll = function(param) {
-  param = param || {}
+// Read
 
-  promise = this.resource.find(param, this.queryResponse)
+Query.prototype.readOne = function(id) {
+  promise = this.resource.findOne(id, this.queryResponse)
+
+  return promise
+}
+
+Query.prototype.readAll = function(params) {
+  params = params || {}
+
+  promise = this.resource.find(params, this.queryResponse)
 
   return promise
 
 }
 
-Query.prototype.readOne = function(param) {
-  promise = this.resource.findOne(param, this.queryResponse)
+// Update
 
-  return promise
-}
+Query.prototype.update = function() {
+  
+};
 
-Query.prototype.deleteMany = function(param) {
-  param = param || {}
+Query.prototype.updateOne = function() {
 
-  promise = this.resource.remove(param, this.queryResponse)
+};
 
-  return promise
-
-}
+// Delete
 
 Query.prototype.deleteOne = function(id) {
 
@@ -79,6 +86,15 @@ Query.prototype.deleteOne = function(id) {
   return promise
 
 }
+
+Query.prototype.deleteMany = function(params) {
+  params = params || {}
+
+  promise = this.resource.remove(params, this.queryResponse)
+
+  return promise
+}
+
 
 module.exports = Query
 

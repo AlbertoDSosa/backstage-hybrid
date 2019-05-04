@@ -1,0 +1,15 @@
+{
+  "name": "mqueries",
+  "version": "0.0.1",
+  "description": "Librería para hacer mis consultas a MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "MongoDB",
+    "Mongoose"
+  ],
+  "author": "AlbertoDSosa",
+  "license": "ISC"
+}

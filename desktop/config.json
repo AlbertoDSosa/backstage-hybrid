@@ -2,7 +2,7 @@
 	"src": "./desktop/src/index.pug",
 	"dest": "./desktop/build",
 	"copy": {
-		"src": ["./desktop/src/package.json", "./desktop/src/index.js"],
+		"src": "./desktop/src/**/*",
 		"dest": "./desktop/build"
 	}
 }

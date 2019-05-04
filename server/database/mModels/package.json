@@ -1,0 +1,16 @@
+{
+  "name": "backstage-models",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Mongoose",
+    "Schema",
+    "models"
+  ],
+  "author": "Alberto D.Sosa",
+  "license": "ISC"
+}

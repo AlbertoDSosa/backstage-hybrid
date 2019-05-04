@@ -2,16 +2,6 @@ doctype html
 html(lang="es")
 	head
 		title= Backstage
+		link(rel="stylesheet", href="styles/styles.css")
 	body
-		form(id="add", name="addForm")
-			input(id="add_name", type="text", name="name")
-			input(id="add_id", type="text", name="id")
-			input(type="submit", value="Save")
-		form(id="delete", name="deleteForm")
-			input(id="delete_id", type="text", name="id")
-			input(type="submit", value="Delete")
-		form(id="find", name="findForm")
-			input(id="find_name", type="text", name="name")
-			input(type="submit", value="Find")
-		div.out
-		script(src="index.js")
+		script(src="scripts/app.js")

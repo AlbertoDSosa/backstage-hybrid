@@ -1,7 +1,7 @@
 
 var express = require('express')
-var User = require('libs/models').user
-var db = require('libs/queries')
+var User = require('database/models').user
+var db = require('database/queries')
 
 var router = express.Router()
 
